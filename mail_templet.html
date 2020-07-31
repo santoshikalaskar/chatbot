@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+  <div>
+    <div style="background-color:purple;height:2px;"></div><br>
+    <h3> Hello,</h3>
+    <h3> This is daily update data summery of chatbot </h3>
+    <h4>Day wise summery table:</h4>
+  </div>
+  <div style="margin-bottom:5px;"></div>
+  <table style="border-spacing:0px;border: 1px solid black;">
+  <thead>
+    <tr style="text-align:center;color:black;border-collapse: collapse;">
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Date1 ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Number_of_Persons_Interacted ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Max_Num_of_queries_from_one_person ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Max_Time_spent_by_a_person ?></th>
+  </tr>
+  </thead>
+  <tbody>
+    <? var count1 = 0 ?>
+    <? TableRangeValue1.forEach(r => { ?> 
+      <? if (yesterday === r[0]) { count1= count1 + 1 ?>
+  
+      <tr style="border: 1px solid black;border-bottom: 1px solid #ddd;">
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[0] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"> <?= r[1] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[2] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[3] ?></td>
+      </tr>
+  
+      <? }  ?>
+    <?}) ?>
+  
+    <? if (count1 === 0) { ?>
+      <p><b><center>Sorry Today's Chatbot data Not available...!</center></b></p>
+    <? } ?>
+  
+  </tbody>
+  </table>
+  <br>
+  
+  <h4>Date wise person_list summery:</h4>
+  <div style="margin-bottom:5px;"></div>
+  
+  <table style="border-spacing:0px;border: 1px solid black;">
+  <thead>
+    <tr style="color:black;border-collapse: collapse;">
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Date2 ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Email_Id ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Name ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= No_of_querries ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Start_time ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= End_Time ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;"><?= Duration ?></th>
+    </tr>
+  </thead>
+  <tbody>
+    <? var count = 0 ?>
+    <? TableRangeValue2.forEach(r => { ?> 
+      <? if (yesterday === r[0]) {  count= count + 1 ?>
+  
+      <tr style="border: 1px solid black;border-bottom: 1px solid #ddd;">
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[0] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"> <?= r[1] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[2] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[3] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[4] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[5] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[6] ?></td>
+      </tr>
+  
+      <? }  ?>
+    
+   <?}) ?>
+  
+   <? if (count === 0) { ?>
+     <p><b><center>Sorry Today's Chatbot data Not available...!</center></b></p>
+   <? } ?>
+  
+  </tbody>
+  </table>
+  <br>
+  <div style="background-color:purple;height:2px;"></div>
+  <br>
+     <h3> Thanks. </h3>
+  </body>
+</html>
+
+
+
