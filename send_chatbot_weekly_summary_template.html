@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+  <div>
+    <div style="background-color:purple;height:2px;"></div><br>
+    <h4> Hello BridgeLabz Team,</h4>
+    <h4> This mail is for Weekly Summary of ChatBot. </h4>
+  </div>
+  
+  <? var count = 0 ?>
+    <? for (var j = 0; j <= week_days.length; j++)
+    {
+    TableRangeValue1.forEach(r => 
+    { 
+       if (week_days[j] == r[0]) {  
+        count= count + 1
+      } 
+   })
+   } ?>
+  
+  <? if (count > 0) { ?>
+  <h4> The table contains from Last Week Day wise summary of ChatBot Interaction :</h4>
+  <div style="margin-bottom:5px;"></div>
+  <table style="border-spacing:0px;border: 1px solid black;">
+  <thead>
+    <tr style="text-align:center;color:black;border-collapse: collapse;">
+    <th style="text-align:center;padding:2px;border: 1px solid black;color:blue;"><?= Date1 ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;color:blue;"><?= Number_of_Persons_Interacted ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;color:blue;"><?= Max_Num_of_queries_from_one_person ?></th>
+    <th style="text-align:center;padding:2px;border: 1px solid black;color:blue;"><?= Max_Time_spent_by_a_person ?></th>
+  </tr>
+  </thead>
+  <tbody>
+    <? for (var j = 0; j <= week_days.length; j++){ ?>
+    <? TableRangeValue1.forEach(r => { ?> 
+      <? if (week_days[j] == r[0]) { ?>
+  
+      <tr style="border: 1px solid black;border-bottom: 1px solid #ddd;">
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[0] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[1] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[2] ?></td>
+      <td style="text-align:center;padding:2px;border: 1px solid black;"><?= r[3] ?></td>
+      </tr>
+  
+      <? }  ?>
+      <? }) ?>
+    <?} ?>
+  
+    <? } if (count === 0) { ?>
+
+     <p style="text-align: center; vertical-align: middle; color:red;"><b>Sorry No Chatbot interaction available on this Week...!</b></p>
+
+   <? } ?>
+  
+  </tbody>
+  </table>
+  <br>
+  
+  <div style="background-color:purple;height:2px;"></div>
+   <pre>
+  <b>
+With best regards,
+  BridgeLabz
+   </b>
+  </pre>
+  </body>
+</html>
+
+
+
