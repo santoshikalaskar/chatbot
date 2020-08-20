@@ -13,4 +13,7 @@ data = r.json()
 print(data[0].get("text"))
 
 # using curl command in terminal
-#curl -XPOST -d '{"message":"hello","sender":"me"}' 'http://localhost:5005/webhooks/rest/webhook'
+# curl -XPOST -d '{"message":"hello","sender":"me"}' 'http://localhost:5005/webhooks/rest/webhook'
+
+# run rasa project 
+# rasa run --enable-api --debug --cors "*"
