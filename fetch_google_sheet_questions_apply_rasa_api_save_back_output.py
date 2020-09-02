@@ -64,7 +64,7 @@ class Rasa_Test:
 rasa_obj = Rasa_Test()
 sheet = rasa_obj.call_sheet("Chatbot_Daily_Report","Chatbot_Daily_Report")
 todays_date = datetime.today().strftime('%b %d, %Y')
-todays_date = "Aug 23, 2020"
+#todays_date = "Aug 23, 2020"
 question_list, email_id,Name = rasa_obj.fetch_data(sheet,todays_date)
 # email_id = [item for item in sheet.col_values(3) if item]
 # Name = [item for item in sheet.col_values(4) if item]
